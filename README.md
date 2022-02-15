@@ -19,6 +19,9 @@ $ pip3 install -r requirements.txt
 # Start Bot 
 $ python3 -m Amanda
 ```
+<p align="middle">
+  <img src="/img/hardway.svg" width='800"'>
+</p>
 
 ##### Mandatory Vars
 ```
