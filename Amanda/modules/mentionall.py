@@ -10,7 +10,7 @@ from Amanda.modules.disable import DisableAbleCommandHandler
 from Amanda.modules.helper_funcs.alternate import typing_action
 from Amanda.modules.helper_funcs.chat_status import bot_admin, user_admin
 from Amanda.modules.helper_funcs.extraction import extract_user_and_text
-from Amanda TOKEN, API_ID, API_HASH, pbot
+from Amanda import TOKEN, API_ID, API_HASH, pbot
 
 logging.basicConfig(
     level=logging.INFO,
