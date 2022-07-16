@@ -5,7 +5,7 @@ from pyrogram import Client, filters
 from config import Config
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 import logging
-from Amanda API_ID, API_HASH, API_ID, pbot
+from Amanda import API_ID, API_HASH, API_ID, pbot
 from logging.handlers import RotatingFileHandler
 
 
