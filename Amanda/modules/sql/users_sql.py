@@ -207,6 +207,9 @@ def migrate_chat(old_chat_id, new_chat_id):
         SESSION.commit()
 
 
+ensure_bot_in_db()
+
+
 def del_user(user_id):
     with INSERTION_LOCK:
         curr = SESSION.query(Users).get(user_id)
@@ -214,11 +217,6 @@ def del_user(user_id):
             SESSION.delete(curr)
             SESSION.commit()
             return True
-
-        ChatMembers.query.filter(ChatMembers.user == user_id).delete()
-        SESSION.commit()
-        SESSION.close()
-    return False
 
 
 def rem_chat(chat_id):
