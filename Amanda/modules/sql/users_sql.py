@@ -69,9 +69,11 @@ class ChatMembers(BASE):
         )
 
 
-Users.__table__.create(checkfirst=True)
-Chats.__table__.create(checkfirst=True)
-ChatMembers.__table__.create(checkfirst=True)
+Users.__table__.create(checkfirst=True, primary_key=True)
+Chats.__table__.create(checkfirst=True, primary_key=True)
+ChatMembers.__table__.create(checkfirst=True, primary_key=True)
+insert_stmt = insert_stmt.on_conflict_do_nothing(
+index_elements=['Users']
 
 INSERTION_LOCK = threading.RLock()
 
@@ -81,7 +83,7 @@ def ensure_bot_in_db():
         bot = Users(dispatcher.bot.id, dispatcher.bot.username)
         SESSION.merge(bot)
         SESSION.commit()
-
+        return
 
 def update_user(user_id, username, chat_id=None, chat_name=None):
     with INSERTION_LOCK:
