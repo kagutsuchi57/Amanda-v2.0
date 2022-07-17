@@ -72,8 +72,6 @@ class ChatMembers(BASE):
 Users.__table__.create(checkfirst=True, primary_key=True)
 Chats.__table__.create(checkfirst=True, primary_key=True)
 ChatMembers.__table__.create(checkfirst=True, primary_key=True)
-insert_stmt = insert_stmt.on_conflict_do_nothing(
-index_elements=['Users']
 
 INSERTION_LOCK = threading.RLock()
 
