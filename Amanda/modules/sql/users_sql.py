@@ -8,6 +8,7 @@ from sqlalchemy import (
     UnicodeText,
     UniqueConstraint,
     func,
+    BigInteger,
 )
 
 from Amanda import dispatcher
